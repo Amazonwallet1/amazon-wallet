@@ -1,0 +1,384 @@
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #f4f7fb 60%, #e3eafc 100%);
+  color: #222;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* LOGIN PAGE */
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 2rem;
+}
+.login-box {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(30,60,114,0.18);
+  transition: box-shadow 0.2s;
+}
+.login-box:hover {
+  box-shadow: 0 12px 40px rgba(30,60,114,0.22);
+}
+.login-box h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a5298;
+}
+.login-box p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+.login-box input {
+  width: 90%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+.login-box input:focus {
+  border: 1.5px solid #2a5298;
+  outline: none;
+  background: #fff;
+}
+.login-box button {
+  background: linear-gradient(90deg, #2b6ef2 60%, #1e3c72 100%);
+  color: #fff;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(43,110,242,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.login-box button:hover,
+.login-box button:focus {
+  background: linear-gradient(90deg, #1d52c3 60%, #2a5298 100%);
+  box-shadow: 0 4px 16px rgba(43,110,242,0.13);
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+}
+header.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+header.topbar h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1e3c72;
+}
+.logout-btn {
+  background: linear-gradient(90deg, #e74c3c 60%, #c0392b 100%);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.logout-btn:hover,
+.logout-btn:focus {
+  background: linear-gradient(90deg, #c0392b 60%, #e74c3c 100%);
+}
+
+/* CARD + BALANCE */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 2rem 0 1.5rem 0;
+}
+.atm-card {
+  width: 340px;
+  min-width: 260px;
+  height: 200px;
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  border-radius: 1.2rem;
+  color: #fff;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 6px 24px rgba(30,60,114,0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chip {
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(135deg, #ffe082 60%, #ffd54f 100%);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.card-number {
+  margin-top: 1.2rem;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  font-family: 'Inter', monospace, sans-serif;
+}
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  font-size: 0.98rem;
+}
+.card-info small {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.card-info strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.5px;
+}
+.balance-box {
+  background: #fff;
+  padding: 1.5rem 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(43,110,242,0.07);
+  text-align: center;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.balance-title {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.7rem;
+}
+.balance-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2b6ef2;
+  margin-bottom: 0.7rem;
+}
+.toggle-balance {
+  background: linear-gradient(90deg, #16a085 60%, #13856f 100%);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.toggle-balance:hover,
+.toggle-balance:focus {
+  background: linear-gradient(90deg, #13856f 60%, #16a085 100%);
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.actions button {
+  flex: 1 1 160px;
+  min-width: 140px;
+  max-width: 220px;
+  padding: 0.9rem 0.5rem;
+  background: linear-gradient(90deg, #2b6ef2 60%, #1e3c72 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(43,110,242,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.actions button:hover,
+.actions button:focus {
+  background: linear-gradient(90deg, #1f4ec7 60%, #2a5298 100%);
+  box-shadow: 0 4px 16px rgba(43,110,242,0.13);
+}
+
+/* TRANSACTION HISTORY */
+.transactions {
+  margin-top: 2.2rem;
+  text-align: center;
+}
+.toggle-history {
+  background: linear-gradient(90deg, #16a085 60%, #13856f 100%);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle-history:hover,
+.toggle-history:focus {
+  background: linear-gradient(90deg, #13856f 60%, #16a085 100%);
+}
+.history-list {
+  background: #fff;
+  padding: 1.1rem 1rem;
+  margin-top: 1.2rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 8px rgba(43,110,242,0.07);
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+}
+.hidden {
+  display: none !important;
+}
+
+/* FORMS */
+.forms {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(43,110,242,0.07);
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.forms h4 {
+  margin-bottom: 1rem;
+  color: #2a5298;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.forms input,
+.forms select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+.forms input:focus,
+.forms select:focus {
+  border: 1.5px solid #2a5298;
+  outline: none;
+  background: #fff;
+}
+.forms button {
+  background: linear-gradient(90deg, #2b6ef2 60%, #1e3c72 100%);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.forms button:hover,
+.forms button:focus {
+  background: linear-gradient(90deg, #1f4ec7 60%, #2a5298 100%);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .dashboard {
+    padding: 1.5rem 0.5rem;
+  }
+  .summary {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .atm-card, .balance-box {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .login-box {
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+    max-width: 98vw;
+  }
+  .dashboard {
+    padding: 1rem 0.2rem;
+  }
+  .summary {
+    gap: 1rem;
+  }
+  .actions {
+    gap: 0.5rem;
+  }
+  .actions button {
+    min-width: 100px;
+    font-size: 0.98rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .forms, .history-list {
+    padding: 1rem 0.5rem;
+    font-size: 0.98rem;
+  }
+  header.topbar h2 {
+    font-size: 1.1rem;
+  }
+}
