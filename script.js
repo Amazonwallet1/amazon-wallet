@@ -37,7 +37,7 @@ logoutBtn.addEventListener("click", () => {
   loginScreen.style.display = "flex";
   formsDiv.innerHTML = "";
   balanceVisible = true;
-  balanceAmount.textContent = "147,340.62 EUR";
+  balanceAmount.textContent = "2,000.00 EUR";
   toggleBalanceBtn.textContent = "Hide Balance";
 });
 
@@ -47,7 +47,7 @@ toggleBalanceBtn.addEventListener("click", () => {
     balanceAmount.textContent = "****.** EUR";
     toggleBalanceBtn.textContent = "Show Balance";
   } else {
-    balanceAmount.textContent = "147,340.62 EUR";
+    balanceAmount.textContent = "2,000.00 EUR";
     toggleBalanceBtn.textContent = "Hide Balance";
   }
   balanceVisible = !balanceVisible;
